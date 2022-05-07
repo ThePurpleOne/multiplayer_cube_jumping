@@ -24,7 +24,7 @@ func main() {
 	}
 	defer conn.Close()
 
-	go sender(conn)
+	sender(conn, "Hello \n-from client.")
 	//time.Sleep(time.Second * 10)
 
 	//// ! --------------------------------------------------
@@ -45,13 +45,16 @@ func main() {
 		// ! -------------------- UPDATE -------------------
 		// ! --------------------------------------------------
 		if rl.IsKeyDown(rl.KeyLeft) && p1.check_left(w1) {
+			sender(conn, "MOVE LEFT");
 			p1.move_left(STEP);
 		}
 		if rl.IsKeyDown(rl.KeyRight) && p1.check_right(w1) {
+			sender(conn, "MOVE RIGHT");
 			p1.move_right(STEP);
 		}
 
-		if rl.IsKeyPressed(rl.KeySpace) {
+		if rl.IsKeyPressed(rl.KeySpace) && !p1.is_jumping{
+			sender(conn, "JUMP");
 			p1.is_jumping = true;
 		}
 	//	//else{
