@@ -7,6 +7,7 @@ import (
 )
 
 type player struct{
+	id int32
 	pos rl.Vector2
 	vel rl.Vector2
 	color rl.Color
@@ -16,8 +17,11 @@ type player struct{
 }
 
 const STEP = 10
-func create_player(x_, y_ float32, c_ rl.Color, s_ float32) player {
-	return player{	pos : rl.NewVector2(x_, y_),
+func create_player(id_* int32, x_, y_ float32, c_ rl.Color, s_ float32) player {
+
+	*id_ += 1
+	return player{	id: *id_ - 1,
+					pos : rl.NewVector2(x_, y_),
 					vel : rl.NewVector2(10, 10),
 					color : c_,
 					size : rl.NewVector2(s_, s_),
