@@ -35,6 +35,18 @@ func sender(conn *websocket.Conn, msg string) error {
 	//}
 }
 
+func receiver(conn *websocket.Conn) {
+	for {
+		_, message, err := conn.ReadMessage()
+		if err != nil {
+			log.Println("read:", err)
+			return
+		}
+		log.Printf("recv: %s", message)
+	}
+}
+
+
 func receive_init(conn *websocket.Conn) (int32, rl.Vector2, rl.Color, rl.Vector2) {
 		_, payload, err := conn.ReadMessage()
 		if err != nil{
@@ -55,7 +67,7 @@ func receive_init(conn *websocket.Conn) (int32, rl.Vector2, rl.Color, rl.Vector2
 
 		// ! PARSE COLOR
 		c, _ := strconv.ParseInt(splitted[2], 10, 32)
-				
+
 		color := int_to_color(uint32(c))
 
 		// ! PARSE POSITION

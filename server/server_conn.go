@@ -14,10 +14,11 @@ type wrapper_handler struct{
 	world_size rl.Vector2
 	player_pos rl.Vector2
 	color int32
+	move string
 }
 
 // Handler fucntion called everytime there is a request on /ws
-func (wh wrapper_handler) handler_socket(w http.ResponseWriter, r *http.Request) { 
+func (wh* wrapper_handler) handler_socket(w http.ResponseWriter, r *http.Request) { 
 	upgrader.CheckOrigin = func(r *http.Request) bool { return true }
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -38,7 +39,11 @@ func (wh wrapper_handler) handler_socket(w http.ResponseWriter, r *http.Request)
 
 	_ = conn.WriteMessage(websocket.TextMessage, msg)//msg)
 
-	reader(conn)
+	move_chan := make(chan string, 2)
+	go reader(conn, move_chan)
+
+	// After the first message, the wrapper can be modified to get the move back to the main
+	wh.move = <-move_chan
 }
 
 
@@ -47,7 +52,7 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-func reader(conn* websocket.Conn){
+func reader(conn* websocket.Conn, move_chan chan string) {
 	for{
 		_, payload, err := conn.ReadMessage()
 		if err != nil{
@@ -55,6 +60,7 @@ func reader(conn* websocket.Conn){
 			return
 		}
 		fmt.Println(string(payload))
+		move_chan <- string(payload)
 		payload = []byte("Initial Connection")
 		_ = conn.WriteMessage(websocket.TextMessage, payload)
 	}

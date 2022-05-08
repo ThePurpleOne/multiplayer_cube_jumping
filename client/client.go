@@ -41,7 +41,6 @@ func main() {
 	// ! ------------------ WORLD CREATIO------------------
 	// ! --------------------------------------------------
 	p1 := create_player(player_pos.X, player_pos.Y, cube_color, 50);
-	//p1 := create_player(player_pos.X, player_pos.Y, rl.Purple, 50);
 	w1 := create_world(int32(world_size.X), int32(world_size.Y));
 
 	rl.InitWindow(WIDTH, HEIGHT, "raylib [core] example - basic window")
@@ -64,16 +63,17 @@ func main() {
 		if rl.IsKeyPressed(rl.KeySpace) && !p1.is_jumping{
 			sender(conn, "J");
 			p1.is_jumping = true;
-		}else{
-			if rl.IsKeyDown(rl.KeyUp) && p1.check_top(w1) {
-				p1.move_up(STEP);
-			}
-			if rl.IsKeyDown(rl.KeyDown) && p1.check_bot(w1) {
-				p1.move_down(STEP);
-			}
 		}
-		p1.jump()
-		
+		//else{
+			//if rl.IsKeyDown(rl.KeyUp) && p1.check_top(w1) {
+			//	p1.move_up(STEP);
+			//}
+			//if rl.IsKeyDown(rl.KeyDown) && p1.check_bot(w1) {
+			//	p1.move_down(STEP);
+			//}
+		//}
+		//p1.jump()
+
 		// Debug p1 pos
 		//fmt.Println("Player pos: ", p1.pos)
 

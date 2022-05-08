@@ -1,10 +1,15 @@
 # MCP - Multiplayer Cube Jumping
 
 # Multiplayer architecture.
-For now, I'am just trying to implement server based multiplayer, might implement p2p host later.
+For now, I'am just trying to implement **server based** multiplayer, might implement p2p host later.
 
 ## On connect
-When the server is started, A client can be launched and will try to connect to the server. When the connection is established, the server will send its ID. The server will then create an instance of a "player" and add it to a list. 
+When the server is started, A client can be launched and will try to connect to the server. 
+When the connection is established, the server will send:
+- An ID for the client
+- The the world Size.
+- The first client position
+The server will then create an instance of a "player" and add it to a list of player in the world.
 
 ## Input format
 Each player will send formatted inputs to the server:
@@ -16,7 +21,7 @@ INPUT CAN BE:
 
 ## Output format
 The server will send formatted outputs to the clients at fixed interval:
-MESSAGE : ```"{PLAYER_ID}-{(x, y)}-{COLOR}-{SIZE}"```
+MESSAGE : ```"{PLAYER_ID}-{(WIDTH, HEIGHT)}-{COLOR}-{(INITAL_CUBE_POS.x, INITAL_CUBE_POS.y)}"```
 
 
 ## Server

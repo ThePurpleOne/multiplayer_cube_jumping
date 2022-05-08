@@ -21,11 +21,6 @@ func color_to_int(c rl.Color) int32 {
 
 func main(){
 
-	fmt.Println("Color to int: ", color_to_int(rl.Purple))
-	fmt.Printf("Color to int: %d", color_to_int(rl.Purple))
-	fmt.Printf("Color to int: %0.8X", color_to_int(rl.Purple))
-	fmt.Printf("Color to int: %0.32b", color_to_int(rl.Purple))
-
 	// CREATE WORLD
 	w1 := create_world(WIDTH, HEIGHT);
 
@@ -35,16 +30,17 @@ func main(){
 							player_pos: rl.NewVector2(float32(WIDTH/2), float32(600)),
 							color     : color_to_int(rl.Purple)}
 
-	// LOG COLOR
-	fmt.Println(wh1.color)
-
-	// ADD A PLAYER
+	// ! ADD A PLAYER
 	w1.player_list = append(w1.player_list, create_player(&wh1.id, 100, 600, rl.Purple, 50));
 
-	w1.player_list[0].jump()
+	
+
+	//w1.player_list[0].
 
 	// CREATE LISTENNER SERVER
 	fmt.Println("Starting server on port 8080")
 	http.HandleFunc("/ws", wh1.handler_socket)
 	http.ListenAndServe(":8080", nil)
+
+	fmt.Println("PLAYER MOVE : " + wh1.move) 
 }
