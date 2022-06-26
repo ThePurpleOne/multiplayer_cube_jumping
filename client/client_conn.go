@@ -27,7 +27,7 @@ func sender(conn *websocket.Conn, msg string) error {
 	if conn == nil {
 		return errors.New("no web socket connection")
 	}
-	fmt.Println("Sending message")
+	fmt.Println("Sending message: ", msg)
 	message := []byte(msg)
 	_ = conn.WriteMessage(websocket.TextMessage, message)
 	return nil

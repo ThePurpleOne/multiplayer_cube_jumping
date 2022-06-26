@@ -1,1 +1,33 @@
-<mxfile host="Electron" modified="2022-05-07T17:14:17.493Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/18.0.1 Chrome/100.0.4896.143 Electron/18.2.0 Safari/537.36" etag="OQvCThhvzoVYTGH_yGsn" version="18.0.1" type="device"><diagram id="yvuhHx2GofF4obykak1I" name="networking">7VZRb5swEP41PKbCQFL22LBkk6Z1UpE2aW+WccCq4ahxBuzX7wx2CE0itZOiqtpeEt93Z9/dd99F8cKk7D4pWhdfIePSC/ys88KPXhB8iGL8NEA/Asvb2xHIlchGiExAKn5zC/oW3YuMN7NADSC1qOcgg6riTM8wqhS087AdyHnWmub8BEgZlafoD5HpYkTjpT/hn7nIC5eZ+NZTUhdsgaagGbRHULjxwkQB6PFUdgmXhjvHy3hve8F7KEzxSr/kwkLm7f23L6slJTrc/dym/f3Twr7yi8q9bdgWq3vHgIJ9lXHziO+F67YQmqc1Zcbb4sgRK3Qp0SJ4bLSCxwNTgUFc2+Z288g1K6xhU3OleXexJ3JgChXGoeRa9RhiL8SW235uttOkAjeP4mhKQWRBatWRH16eCMSD5fAVfAZn+FxJTLveAbaEe0A1XZjzolFsiFg97Y0EkEVtNH1nCgi2JqS5yQFyyWktmhsGJcKswZDtjpZCmp43KHsoBaPTM0bk43Qm7HzYNGMHjnUNO4hl+CSuuyF0urTKzXe6efi+eXCd2Wqd80RAOF59TiUJSFCIVFBxk1xI+QyiUuQVmgzlwBFfG7FgG/LOOkqRZSbNWVnOhXtZh6Z4+8NDYmfb8snbifRqGg3f985Hz/iMXsgnCa5FaPRPLH0iBR+6If8X/7pK/YvNR3P6JzH4jv6OhZs/</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="yvuhHx2GofF4obykak1I" name="networking">
+        <mxGraphModel dx="870" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="-lgwNOK65a1t3fZFSyNq-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;shadow=0;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="80" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="-lgwNOK65a1t3fZFSyNq-2" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Economica&quot; face=&quot;Economica&quot; style=&quot;font-size: 18px;&quot;&gt;SERVER&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;sketch=0;fontSize=18;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="80" y="80" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="-lgwNOK65a1t3fZFSyNq-3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;shadow=0;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="40" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="-lgwNOK65a1t3fZFSyNq-4" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Economica&quot; face=&quot;Economica&quot; style=&quot;font-size: 18px;&quot;&gt;Client 1&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;sketch=0;fontSize=18;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="480" y="40" width="200" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="PmOE8CDzCug5vRbFJ7DR" name="Page-2">
+        <mxGraphModel dx="870" dy="647" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="2TNLxdJRCQXy5ZFhtf6P-0"/>
+                <mxCell id="2TNLxdJRCQXy5ZFhtf6P-1" parent="2TNLxdJRCQXy5ZFhtf6P-0"/>
+                <mxCell id="2TNLxdJRCQXy5ZFhtf6P-2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2TNLxdJRCQXy5ZFhtf6P-1">
+                    <mxGeometry x="80" y="80" width="200" height="200" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

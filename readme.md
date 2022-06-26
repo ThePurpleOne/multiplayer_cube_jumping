@@ -29,3 +29,24 @@ The server will receive each player inputs, process the physic and send back the
 
 ## Client
 The client will send inputs from user and show the cubes sent back by the server at the right positions.
+
+
+# HOW DOES IT WORK
+There is a Server and Client(s).
+The server Starts and Creates an empty world.
+
+The Server then listens for new clients.
+When a client connects, the server sends initial Data to the client for him to show the world.
+It then creates a player and adds it to the world.
+The player has :
+- an ID
+- a Position
+- a Velocity
+- a Color
+- a Size
+- Jumping things
+
+A listenner "Thread" is created on the SERVER for each client connected:
+The listenner will listen for new inputs from the client and directly modify the player struct.
+
+On the server, at fixed interval, the server will send the new position of every cubes to be drawn on each clients.

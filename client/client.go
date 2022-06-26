@@ -38,12 +38,12 @@ func main() {
 
 
 	// ! --------------------------------------------------
-	// ! ------------------ WORLD CREATIO------------------
+	// ! ----------------- WORLD CREATION -----------------
 	// ! --------------------------------------------------
 	p1 := create_player(player_pos.X, player_pos.Y, cube_color, 50);
 	w1 := create_world(int32(world_size.X), int32(world_size.Y));
 
-	rl.InitWindow(WIDTH, HEIGHT, "raylib [core] example - basic window")
+	rl.InitWindow(WIDTH, HEIGHT, "Multiplayer Cube Jumping")
 	rl.SetTargetFPS(100)
 
 	for !rl.WindowShouldClose(){

@@ -19,14 +19,15 @@ type wrapper_handler struct{
 
 // Handler fucntion called everytime there is a request on /ws
 func (wh* wrapper_handler) handler_socket(w http.ResponseWriter, r *http.Request) { 
-	upgrader.CheckOrigin = func(r *http.Request) bool { return true }
+	upgrader.CheckOrigin = func(r *http.Request) bool { return true } // ALLOW ANY ORIGIN
+
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	// SEND INITIAL DATA TO CLIENT
+	// SEND INITIAL DATA TO CLIENT (ONLY THE FIRST TIME CONNECTING)
 	// 1 - Its ID
 	// 3 - The World size
 	// 3 - Its inital position
@@ -39,11 +40,14 @@ func (wh* wrapper_handler) handler_socket(w http.ResponseWriter, r *http.Request
 
 	_ = conn.WriteMessage(websocket.TextMessage, msg)//msg)
 
-	move_chan := make(chan string, 2)
+	move_chan := make(chan string, 5) // CREATE A CHANNEL THAT WILL BE WRITTEN INTO BY READER
 	go reader(conn, move_chan)
 
 	// After the first message, the wrapper can be modified to get the move back to the main
-	wh.move = <-move_chan
+	// The loop empties the channel and get the last value in move.
+	for i := range move_chan {
+		wh.move = i 
+	}
 }
 
 

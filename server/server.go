@@ -21,26 +21,24 @@ func color_to_int(c rl.Color) int32 {
 
 func main(){
 
-	// CREATE WORLD
+	// ! CREATE WORLD
 	w1 := create_world(WIDTH, HEIGHT);
 
 	// WRAPPER FOR HANDLER TO PASS INITIAL DATA  
-	wh1 := wrapper_handler{	id: 0,
+	wh1 := wrapper_handler{	id: 69,
 							world_size: w1.size,
 							player_pos: rl.NewVector2(float32(WIDTH/2), float32(600)),
-							color     : color_to_int(rl.Purple)}
+							color     : color_to_int(rl.Red)}
 
 	// ! ADD A PLAYER
 	w1.player_list = append(w1.player_list, create_player(&wh1.id, 100, 600, rl.Purple, 50));
 
-	
-
-	//w1.player_list[0].
+	fmt.Println(w1.player_list[0].id)
 
 	// CREATE LISTENNER SERVER
 	fmt.Println("Starting server on port 8080")
 	http.HandleFunc("/ws", wh1.handler_socket)
 	http.ListenAndServe(":8080", nil)
 
-	fmt.Println("PLAYER MOVE : " + wh1.move) 
+	fmt.Println("PLAYER MOVE : " + wh1.move)
 }
